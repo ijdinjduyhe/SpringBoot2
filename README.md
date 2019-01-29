@@ -4,6 +4,10 @@
 ### Dubbo 
 - 简介：dubbo 分布式开发框架
 - 使用：整合SpringBoot官方教程：[Dubbo-SpringBoot](https://github.com/alibaba/dubbo-spring-boot-starter)
+- 问题：表头1  | 表头2|
+      --------- | --------|
+      表格单元  | 表格单元 |
+      表格单元  | 表格单元 |
 - 问题：
 -   报错  | 解决方案| 具体方法
       --------- | --------| --------|
