@@ -2,11 +2,11 @@ package com.annie.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.annie.inteface.GetName;
-import org.springframework.stereotype.Component;
 
 
-@Service(version = "1.0.0", timeout = 10000, interfaceClass = GetName.class)
-@Component
+
+
+@Service
 public class GetNameImpl implements GetName {
     @Override
     public String getName(String name) {
