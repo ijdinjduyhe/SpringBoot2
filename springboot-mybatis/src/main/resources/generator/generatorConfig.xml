@@ -32,6 +32,10 @@
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
         <table tableName="user" schema=""></table>
+        <table tableName="article" schema=""></table>
+        <table tableName="articles" schema=""></table>
+        <table tableName="comment" schema=""></table>
+        <table tableName="comments" schema=""></table>
     </context>
 </generatorConfiguration>
 
