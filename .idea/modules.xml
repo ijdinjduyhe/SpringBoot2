@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" filepath="$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" filepath="$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-web/dubbo-web.iml" filepath="$PROJECT_DIR$/dubbo-web/dubbo-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" />
     </modules>
   </component>
 </project>
