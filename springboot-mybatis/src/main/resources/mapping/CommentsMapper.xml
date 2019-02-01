@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.annie.mapper.CommentsMapper" >
+  <resultMap id="BaseResultMap" type="com.annie.entity.Comments" >
+    <id column="c_id" property="cId" jdbcType="INTEGER" />
+    <result column="c_aa_id" property="cAaId" jdbcType="INTEGER" />
+    <result column="c_allcomment" property="cAllcomment" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    c_id, c_aa_id, c_allcomment
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.annie.entity.CommentsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from comments
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from comments
+    where c_id = #{cId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from comments
+    where c_id = #{cId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.annie.entity.CommentsExample" >
+    delete from comments
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.annie.entity.Comments" >
+    insert into comments (c_id, c_aa_id, c_allcomment
+      )
+    values (#{cId,jdbcType=INTEGER}, #{cAaId,jdbcType=INTEGER}, #{cAllcomment,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.annie.entity.Comments" >
+    insert into comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        c_id,
+      </if>
+      <if test="cAaId != null" >
+        c_aa_id,
+      </if>
+      <if test="cAllcomment != null" >
+        c_allcomment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        #{cId,jdbcType=INTEGER},
+      </if>
+      <if test="cAaId != null" >
+        #{cAaId,jdbcType=INTEGER},
+      </if>
+      <if test="cAllcomment != null" >
+        #{cAllcomment,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.annie.entity.CommentsExample" resultType="java.lang.Integer" >
+    select count(*) from comments
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update comments
+    <set >
+      <if test="record.cId != null" >
+        c_id = #{record.cId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cAaId != null" >
+        c_aa_id = #{record.cAaId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cAllcomment != null" >
+        c_allcomment = #{record.cAllcomment,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update comments
+    set c_id = #{record.cId,jdbcType=INTEGER},
+      c_aa_id = #{record.cAaId,jdbcType=INTEGER},
+      c_allcomment = #{record.cAllcomment,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.annie.entity.Comments" >
+    update comments
+    <set >
+      <if test="cAaId != null" >
+        c_aa_id = #{cAaId,jdbcType=INTEGER},
+      </if>
+      <if test="cAllcomment != null" >
+        c_allcomment = #{cAllcomment,jdbcType=INTEGER},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.annie.entity.Comments" >
+    update comments
+    set c_aa_id = #{cAaId,jdbcType=INTEGER},
+      c_allcomment = #{cAllcomment,jdbcType=INTEGER}
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+</mapper>
