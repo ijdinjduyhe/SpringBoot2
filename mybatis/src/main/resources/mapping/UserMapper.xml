@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.annie.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.annie.entity.User" >
+    <id column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="u_user" property="uUser" jdbcType="CHAR" />
+    <result column="u_password" property="uPassword" jdbcType="CHAR" />
+    <result column="u_email" property="uEmail" jdbcType="CHAR" />
+    <result column="u_phone" property="uPhone" jdbcType="CHAR" />
+    <result column="u_name" property="uName" jdbcType="CHAR" />
+    <result column="u_createtime" property="uCreatetime" jdbcType="TIMESTAMP" />
+    <result column="u_headurl" property="uHeadurl" jdbcType="CHAR" />
+    <result column="u_status" property="uStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    u_id, u_user, u_password, u_email, u_phone, u_name, u_createtime, u_headurl, u_status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.annie.entity.UserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where u_id = #{uId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where u_id = #{uId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.annie.entity.UserExample" >
+    delete from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.annie.entity.User" >
+    insert into user (u_id, u_user, u_password, 
+      u_email, u_phone, u_name, u_createtime, 
+      u_headurl, u_status)
+    values (#{uId,jdbcType=INTEGER}, #{uUser,jdbcType=CHAR}, #{uPassword,jdbcType=CHAR}, 
+      #{uEmail,jdbcType=CHAR}, #{uPhone,jdbcType=CHAR}, #{uName,jdbcType=CHAR}, #{uCreatetime,jdbcType=TIMESTAMP}, 
+      #{uHeadurl,jdbcType=CHAR}, #{uStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.annie.entity.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="uUser != null" >
+        u_user,
+      </if>
+      <if test="uPassword != null" >
+        u_password,
+      </if>
+      <if test="uEmail != null" >
+        u_email,
+      </if>
+      <if test="uPhone != null" >
+        u_phone,
+      </if>
+      <if test="uName != null" >
+        u_name,
+      </if>
+      <if test="uCreatetime != null" >
+        u_createtime,
+      </if>
+      <if test="uHeadurl != null" >
+        u_headurl,
+      </if>
+      <if test="uStatus != null" >
+        u_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="uUser != null" >
+        #{uUser,jdbcType=CHAR},
+      </if>
+      <if test="uPassword != null" >
+        #{uPassword,jdbcType=CHAR},
+      </if>
+      <if test="uEmail != null" >
+        #{uEmail,jdbcType=CHAR},
+      </if>
+      <if test="uPhone != null" >
+        #{uPhone,jdbcType=CHAR},
+      </if>
+      <if test="uName != null" >
+        #{uName,jdbcType=CHAR},
+      </if>
+      <if test="uCreatetime != null" >
+        #{uCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uHeadurl != null" >
+        #{uHeadurl,jdbcType=CHAR},
+      </if>
+      <if test="uStatus != null" >
+        #{uStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.annie.entity.UserExample" resultType="java.lang.Integer" >
+    select count(*) from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user
+    <set >
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uUser != null" >
+        u_user = #{record.uUser,jdbcType=CHAR},
+      </if>
+      <if test="record.uPassword != null" >
+        u_password = #{record.uPassword,jdbcType=CHAR},
+      </if>
+      <if test="record.uEmail != null" >
+        u_email = #{record.uEmail,jdbcType=CHAR},
+      </if>
+      <if test="record.uPhone != null" >
+        u_phone = #{record.uPhone,jdbcType=CHAR},
+      </if>
+      <if test="record.uName != null" >
+        u_name = #{record.uName,jdbcType=CHAR},
+      </if>
+      <if test="record.uCreatetime != null" >
+        u_createtime = #{record.uCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.uHeadurl != null" >
+        u_headurl = #{record.uHeadurl,jdbcType=CHAR},
+      </if>
+      <if test="record.uStatus != null" >
+        u_status = #{record.uStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user
+    set u_id = #{record.uId,jdbcType=INTEGER},
+      u_user = #{record.uUser,jdbcType=CHAR},
+      u_password = #{record.uPassword,jdbcType=CHAR},
+      u_email = #{record.uEmail,jdbcType=CHAR},
+      u_phone = #{record.uPhone,jdbcType=CHAR},
+      u_name = #{record.uName,jdbcType=CHAR},
+      u_createtime = #{record.uCreatetime,jdbcType=TIMESTAMP},
+      u_headurl = #{record.uHeadurl,jdbcType=CHAR},
+      u_status = #{record.uStatus,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.annie.entity.User" >
+    update user
+    <set >
+      <if test="uUser != null" >
+        u_user = #{uUser,jdbcType=CHAR},
+      </if>
+      <if test="uPassword != null" >
+        u_password = #{uPassword,jdbcType=CHAR},
+      </if>
+      <if test="uEmail != null" >
+        u_email = #{uEmail,jdbcType=CHAR},
+      </if>
+      <if test="uPhone != null" >
+        u_phone = #{uPhone,jdbcType=CHAR},
+      </if>
+      <if test="uName != null" >
+        u_name = #{uName,jdbcType=CHAR},
+      </if>
+      <if test="uCreatetime != null" >
+        u_createtime = #{uCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uHeadurl != null" >
+        u_headurl = #{uHeadurl,jdbcType=CHAR},
+      </if>
+      <if test="uStatus != null" >
+        u_status = #{uStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.annie.entity.User" >
+    update user
+    set u_user = #{uUser,jdbcType=CHAR},
+      u_password = #{uPassword,jdbcType=CHAR},
+      u_email = #{uEmail,jdbcType=CHAR},
+      u_phone = #{uPhone,jdbcType=CHAR},
+      u_name = #{uName,jdbcType=CHAR},
+      u_createtime = #{uCreatetime,jdbcType=TIMESTAMP},
+      u_headurl = #{uHeadurl,jdbcType=CHAR},
+      u_status = #{uStatus,jdbcType=INTEGER}
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+</mapper>
