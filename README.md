@@ -8,5 +8,5 @@
 ### Mybatis-Generator
 - 简介：
   - Mybatis：持久层框架。
-  - Generator MyBatis框架下的一款优秀的分页插件。
+  - Generator MyBatis：框架下的一款优秀的分页插件。
 - 使用教程：
