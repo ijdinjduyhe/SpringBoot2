@@ -9,4 +9,4 @@
 - 简介：
   - Mybatis：持久层框架。
   - Generator：自动生成代码。
-- 使用教程：[git主所写](http://www.baidu.com)。[参考资料](https://blog.csdn.net/winter_chen001/article/details/77249029)。
+- 使用教程：[git主所写](https://www.jianshu.com/p/ffdc534ed1d5)。[参考资料](https://blog.csdn.net/winter_chen001/article/details/77249029)。
