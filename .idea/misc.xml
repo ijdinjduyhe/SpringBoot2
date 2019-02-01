@@ -7,7 +7,6 @@
         <option value="$PROJECT_DIR$/dubbo-service1/pom.xml" />
         <option value="$PROJECT_DIR$/dubbo-interfaces/pom.xml" />
         <option value="$PROJECT_DIR$/dubbo-web/pom.xml" />
-        <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis/pom.xml" />
       </list>
     </option>
