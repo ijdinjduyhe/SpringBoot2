@@ -3,10 +3,10 @@
 
 ### Dubbo 
 - 简介：dubbo 分布式开发框架。
-- 使用教程：[SpringBoot2.1.2-Dubbo](https://www.jianshu.com/p/0579ce1509ea)。[官方教程](https://github.com/apache/incubator-dubbo-spring-boot-project)。
+- 使用教程：[git主所写](https://www.jianshu.com/p/0579ce1509ea)。[官方教程](https://github.com/apache/incubator-dubbo-spring-boot-project)。
 
 ### Mybatis-Generator
 - 简介：
   - Mybatis：持久层框架。
-  - Generator MyBatis：框架下的一款优秀的分页插件。
-- 使用教程：
+  - Generator：自动生成代码。
+- 使用教程：[git主所写](http://www.baidu.com)。[参考资料](https://blog.csdn.net/winter_chen001/article/details/77249029)。
