@@ -3,6 +3,8 @@ package com.annie.controller;
 import com.annie.entity.User;
 import com.annie.entity.UserExample;
 import com.annie.mapper.UserMapper;
+import com.annie.service.TestService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +16,18 @@ import java.util.List;
 public class Testontroller {
 
     @Autowired
-    UserMapper userMapper;
+    TestService testService;
 
 
     @ResponseBody
     @RequestMapping("/getName")
-    public List<User> getName(){
-
-        UserExample examlp = new UserExample();
-        UserExample.Criteria criteria = examlp.createCriteria();
-        criteria.andUNameEqualTo("1");
-        List<User> users = userMapper.selectByExample(null);
-
-        return users;
+    public PageInfo getName(){
+        PageInfo name = testService.getName();
+        return name;
     }
+
+
+
 
 
 
