@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.annie.mapper.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.annie.entity.Comment" >
+    <id column="cc_id" property="ccId" jdbcType="INTEGER" />
+    <result column="cc_c_id" property="ccCId" jdbcType="INTEGER" />
+    <result column="cc_time" property="ccTime" jdbcType="TIMESTAMP" />
+    <result column="cc_content" property="ccContent" jdbcType="CHAR" />
+    <result column="cc_bulou" property="ccBulou" jdbcType="INTEGER" />
+    <result column="cc_u_id" property="ccUId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    cc_id, cc_c_id, cc_time, cc_content, cc_bulou, cc_u_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.annie.entity.CommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where cc_id = #{ccId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from comment
+    where cc_id = #{ccId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.annie.entity.CommentExample" >
+    delete from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.annie.entity.Comment" >
+    insert into comment (cc_id, cc_c_id, cc_time, 
+      cc_content, cc_bulou, cc_u_id
+      )
+    values (#{ccId,jdbcType=INTEGER}, #{ccCId,jdbcType=INTEGER}, #{ccTime,jdbcType=TIMESTAMP}, 
+      #{ccContent,jdbcType=CHAR}, #{ccBulou,jdbcType=INTEGER}, #{ccUId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.annie.entity.Comment" >
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ccId != null" >
+        cc_id,
+      </if>
+      <if test="ccCId != null" >
+        cc_c_id,
+      </if>
+      <if test="ccTime != null" >
+        cc_time,
+      </if>
+      <if test="ccContent != null" >
+        cc_content,
+      </if>
+      <if test="ccBulou != null" >
+        cc_bulou,
+      </if>
+      <if test="ccUId != null" >
+        cc_u_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ccId != null" >
+        #{ccId,jdbcType=INTEGER},
+      </if>
+      <if test="ccCId != null" >
+        #{ccCId,jdbcType=INTEGER},
+      </if>
+      <if test="ccTime != null" >
+        #{ccTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ccContent != null" >
+        #{ccContent,jdbcType=CHAR},
+      </if>
+      <if test="ccBulou != null" >
+        #{ccBulou,jdbcType=INTEGER},
+      </if>
+      <if test="ccUId != null" >
+        #{ccUId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.annie.entity.CommentExample" resultType="java.lang.Integer" >
+    select count(*) from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update comment
+    <set >
+      <if test="record.ccId != null" >
+        cc_id = #{record.ccId,jdbcType=INTEGER},
+      </if>
+      <if test="record.ccCId != null" >
+        cc_c_id = #{record.ccCId,jdbcType=INTEGER},
+      </if>
+      <if test="record.ccTime != null" >
+        cc_time = #{record.ccTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ccContent != null" >
+        cc_content = #{record.ccContent,jdbcType=CHAR},
+      </if>
+      <if test="record.ccBulou != null" >
+        cc_bulou = #{record.ccBulou,jdbcType=INTEGER},
+      </if>
+      <if test="record.ccUId != null" >
+        cc_u_id = #{record.ccUId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update comment
+    set cc_id = #{record.ccId,jdbcType=INTEGER},
+      cc_c_id = #{record.ccCId,jdbcType=INTEGER},
+      cc_time = #{record.ccTime,jdbcType=TIMESTAMP},
+      cc_content = #{record.ccContent,jdbcType=CHAR},
+      cc_bulou = #{record.ccBulou,jdbcType=INTEGER},
+      cc_u_id = #{record.ccUId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.annie.entity.Comment" >
+    update comment
+    <set >
+      <if test="ccCId != null" >
+        cc_c_id = #{ccCId,jdbcType=INTEGER},
+      </if>
+      <if test="ccTime != null" >
+        cc_time = #{ccTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ccContent != null" >
+        cc_content = #{ccContent,jdbcType=CHAR},
+      </if>
+      <if test="ccBulou != null" >
+        cc_bulou = #{ccBulou,jdbcType=INTEGER},
+      </if>
+      <if test="ccUId != null" >
+        cc_u_id = #{ccUId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cc_id = #{ccId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.annie.entity.Comment" >
+    update comment
+    set cc_c_id = #{ccCId,jdbcType=INTEGER},
+      cc_time = #{ccTime,jdbcType=TIMESTAMP},
+      cc_content = #{ccContent,jdbcType=CHAR},
+      cc_bulou = #{ccBulou,jdbcType=INTEGER},
+      cc_u_id = #{ccUId,jdbcType=INTEGER}
+    where cc_id = #{ccId,jdbcType=INTEGER}
+  </update>
+</mapper>
