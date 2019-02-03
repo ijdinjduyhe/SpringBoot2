@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/dubbo-interfaces/pom.xml" />
         <option value="$PROJECT_DIR$/dubbo-web/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/security/pom.xml" />
       </list>
     </option>
   </component>

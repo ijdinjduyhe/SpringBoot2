@@ -11,6 +11,7 @@
         <module name="dubbo-service2" />
         <module name="dubbo-web" />
         <module name="mybatis" />
+        <module name="security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="dubbo-service2" target="1.8" />
       <module name="dubbo-web" target="1.8" />
       <module name="mybatis" target="1.8" />
+      <module name="security" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
