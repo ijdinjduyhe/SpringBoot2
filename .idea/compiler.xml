@@ -21,6 +21,7 @@
       <module name="dubbo-web" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="security" target="1.8" />
+      <module name="security5" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
     </bytecodeTargetLevel>
