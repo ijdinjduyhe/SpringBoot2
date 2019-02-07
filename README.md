@@ -10,3 +10,7 @@
   - Mybatis：持久层框架。
   - Generator：自动生成代码。
 - 使用教程：[git主所写](https://www.jianshu.com/p/ffdc534ed1d5)。[参考资料](https://blog.csdn.net/winter_chen001/article/details/77249029)。
+
+### SpringSecurity5
+- 简介：Spring家族的一款安全框架。
+- 使用教程：[git主所写](https://www.jianshu.com/p/ebf5aed50984)。
