@@ -12,6 +12,7 @@
         <module name="dubbo-web" />
         <module name="mybatis" />
         <module name="security" />
+        <module name="thymeleaf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="security5" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
+      <module name="thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
