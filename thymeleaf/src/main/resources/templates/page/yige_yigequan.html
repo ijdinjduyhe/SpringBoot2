@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <style>
+        <!--
+        取消列表的变线
+
+        -->
+        .list-group {
+            border: 0px;
+        }
+
+        .list-group-item {
+            border: 0px;
+        }
+
+        .list-group-item {
+            float: left;
+        }
+
+        #ul1, .li1 {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        function Jump() {
+            window.open("user.html")
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#a1").click(function () {
+                $(".list-group .list-group-item").removeClass("disabled");
+                $("#a1").addClass("disabled");
+            })
+            $("#a2").click(function () {
+                $(".list-group .list-group-item").removeClass("disabled");
+                $("#a2").addClass("disabled");
+            })
+            $("#a3").click(function () {
+                $(".list-group .list-group-item").removeClass("disabled");
+                $("#a3").addClass("disabled");
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div>
+    <img style=" border-radius: 50%;margin-left: 15px" src="../img/user.png" width="70px">
+    <span style="margin-left: 20px;font-size: 18px;font-weight: bold">张三</span>
+    <a onclick="Jump()" class="btn btn-info"
+       style="margin-top: 15px;float: right;margin-right: 20px;font-size: 18px;font-weight: bold">他的主页</a>
+</div>
+<div class="row" style="margin-top: 15px;margin-left: 0px">
+    <div class="list-group" style="font-size: 16px;font-weight: bold">
+        <a class="list-group-item disabled" id="a1">
+            <span class="glyphicon glyphicon-send"></span>
+            最新发布
+        </a>
+        <a class="list-group-item" id="a2">
+            <span class="glyphicon glyphicon-bullhorn"></span>
+            最新评论
+        </a>
+        <a class="list-group-item" id="a3">
+            <span class="glyphicon glyphicon-fire"></span>
+            热门
+        </a>
+    </div>
+</div>
+<hr style="margin-top: 0px">
+<div class="row" style="margin-top: 10px">
+    <div class="col-md-12">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12 divMain">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <!-- 文章标题 -->
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <!-- 文章简介  不能超过52个汉字 -->
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12 divMain">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <!-- 文章标题 -->
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <!-- 文章简介  不能超过52个汉字 -->
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12 divMain">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <!-- 文章标题 -->
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <!-- 文章简介  不能超过52个汉字 -->
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12 divMain">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <!-- 文章标题 -->
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <!-- 文章简介  不能超过52个汉字 -->
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12 divMain">
+        <div class="center-block">
+            <!-- 文章配图 -->
+            <a href="#">
+                <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+            </a>
+            <!-- 文章标题 -->
+            <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+            <!-- 文章简介  不能超过52个汉字 -->
+            <p style="color: #999">
+                这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+            <div>
+                <!-- 发帖人 -->
+                <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                    <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                    <span style="font-size: 13px">李四</span>
+                </a>
+                <!-- 评论数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 点赞数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                <!-- 打赏数 -->
+                <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+    <a href="" style="color: #999999"><p style="text-align: center">加载更多</p></a>
+</div>
+
+</body>
+</html>

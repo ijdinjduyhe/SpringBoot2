@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+        .div-img {
+            height: 250px;
+        }
+
+        .divMain {
+            margin-top: -15px;
+        }
+
+        .navbar {
+            border: 0px;
+            background-color: #FFFFFF;
+        }
+
+        .list-group, .list-group-item {
+            border: 0px;
+            font-size: 16px;
+        }
+
+        .spanText {
+            font-size: 16px;
+            color: #999999;
+        }
+    </style>
+    <!-- iframe 高度自适应 -->
+    <script>
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+
+        window.onload = function () {
+            setIframeHeight(document.getElementById('external-frame'));
+        };
+    </script>
+</head>
+<body>
+
+<!-- 页面主体  -->
+<div class="container">
+    <!-- 标题栏 start -->
+    <iframe width="100%" src="yige_head.html" frameborder="0" scrolling="no"
+            onload="setIframeHeight(this)"></iframe>
+    <!-- 标题栏 end -->
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-3">
+            <div class="list-group">
+                <a class="list-group-item disabled" id="a1">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span style="margin-left: 10px">基本信息</span>
+                </a>
+                <a class="list-group-item" id="a2">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    <span style="margin-left: 10px">个人资料</span>
+                </a>
+                <a class="list-group-item" id="a3">
+                    <span class="glyphicon glyphicon-text-color"></span>
+                    <span style="margin-left: 10px">文章</span>
+                </a>
+                <a class="list-group-item" id="a4">
+                    <span class="glyphicon glyphicon-jpy"></span>
+                    <span style="margin-left: 10px">小金库</span>
+                </a>
+                <a class="list-group-item" id="a5">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+                    <span style="margin-left: 10px">黑名单</span>
+                </a>
+                <a class="list-group-item" id="a6">
+                    <span class="glyphicon glyphicon-cog"></span>
+                    <span style="margin-left: 10px">账号设置</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-7">
+
+            <!-- 模板 -->
+            <div hidden style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"></td>
+                        <td style="width: 75%"></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <!-- 基本资料 默认显示 -->
+            <div id="jbzl" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"><img src="../img/user.png" width="100px" style="border-radius: 50%"></td>
+                        <td style="width: 40%">
+                            <button class="btn-sm btn btn-info">更换头像</button>
+                        </td>
+                        <td style="width: 33%"></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 40px" colspan="3"></td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td><span style="font-size: 16px;color: #999999">昵称</span></td>
+                        <td><input class="form-control" style="background-color: #eeeeee" value="张三"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 16px;color: #999999">电子邮箱</span></td>
+                        <td>
+                            <button class="btn-sm btn btn-info">点击绑定</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 16px;color: #999999">手机</span></td>
+                        <td>
+                            <button class="btn-sm btn btn-info">点击验证</button>
+                            <span style="font-size: 14px;color: #999999"><span class="glyphicon glyphicon-ok"
+                                                                               style="margin-left: 10px;margin-right:5px"></span>已验证</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 16px;color: #999999">是否可以搜索到我</span></td>
+                        <td><span id="yes" style="border-radius: 0px" class="btn-sm btn btn-info">是</span><span id="no"
+                                                                                                                style="border-radius: 0px;border: 1px black;background-color: #cccccc"
+                                                                                                                class="btn-sm btn btn-info">否</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="40px"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!-- 账号设置 暂不开启 -->
+            <div hidden id="zhsz" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">删除账号</span></td>
+                        <td style="width: 75%">
+                            <button id="sczh" class="btn btn-info disabled">删除账号</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 文章 -->
+            <div hidden id="wz" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">发布文章总数</span></td>
+                        <td style="width: 75%"><span
+                                style="font-size: 18px">1000</span>编文章
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">获赞最多</span></td>
+                        <td style="width: 75%">《<span
+                                style="font-size: 18px"><a href="yige_wenzhang.html">非正常人类</a></span>》
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">打赏最多</span></td>
+                        <td style="width: 75%">《<span
+                                style="font-size: 18px"><a href="yige_wenzhang.html">非正常人类</a></span>》
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">最热议</span></td>
+                        <td style="width: 75%">《<span
+                                style="font-size: 18px"><a href="yige_wenzhang.html">非正常人类</a></span>》
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+            <!-- 小金库 -->
+            <div hidden id="xjk" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">获得赞赏次数</span></td>
+                        <td style="width: 75%"><span style="font-size: 18px">1000</span>次</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">最大金额</span></td>
+                        <td style="width: 75%"><span class="glyphicon glyphicon-jpy"></span><span
+                                style="font-size: 18px">1000</span>元
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">平均每笔</span></td>
+                        <td style="width: 75%"><span class="glyphicon glyphicon-jpy"></span><span
+                                style="font-size: 18px">1000</span>元
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">共获得打赏</span></td>
+                        <td style="width: 75%"><span class="glyphicon glyphicon-jpy"></span><span
+                                style="font-size: 18px">10.000.000</span>元
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">当前账上余额</span></td>
+                        <td style="width: 75%"><span class="glyphicon glyphicon-jpy"></span><span
+                                style="font-size: 18px">10.000.000</span>元</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">提钱</span></td>
+                        <td style="width: 75%">
+                            <button class="btn-sm btn btn-info">支付宝</button>
+                            <button class="btn-sm btn btn-info">微信</button>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 黑名单 暂不开启 -->
+            <div hidden id="hmd" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="100%" style="color: #bbbbbb;font-size: 12px"><span
+                                style="color: red">*暂不开启*</span>你可以在用户主页将用户加入你的黑名单。在你黑名单中的用户无法在你文章下评论，无法在其它评论中提到你，无法给你发送简信，自动从你的粉丝列表移除且无法再关注你。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 个人资料 -->
+            <div hidden id="grzl" style="width: 100%">
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td width="25%"><span class="spanText">性别</span></td>
+                        <td style="width: 75%">
+                            <input type="radio" name="sex" value="man"/><span style="margin-left: 15px">男</span>
+                            <input style="margin-left: 30px" type="radio" name="sex" value="woman"/><span
+                                style="margin-left: 15px">女</span>
+                            <input style="margin-left: 30px" type="radio" name="sex" value="null"/><span
+                                style="margin-left: 15px">保密</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><span class="spanText">个人简介</span></td>
+                        <td><textarea id="telText1" class="form-control" placeholder="最多300个字" rows="3"
+                                      style="width: 100%;margin-bottom: 5px"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><span class="spanText">个人网站</span></td>
+                        <td><input width="100%" class="form-control" placeholder="http://你的网站"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><span class="spanText">微信二维码</span></td>
+                        <td>
+                            <button class="btn-sm btn btn-info">更换图片</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="40px" colspan="2">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><span class="btn btn-info">保&nbsp;&nbsp;存</span></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+
+    })
+
+
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#sczh").click(function () {
+            alert("未开启该功能！");
+        })
+
+        $("#no").click(function () {
+            $("#yes").css("border", "1px black");
+            $("#yes").css("background-color", "#cccccc");
+
+            $("#no").css("border", "");
+            $("#no").css("background-color", "");
+
+        });
+        $("#yes").click(function () {
+            $("#no").css("border", "1px black");
+            $("#no").css("background-color", "#cccccc");
+
+            $("#yes").css("border", "");
+            $("#yes").css("background-color", "");
+
+        });
+
+
+        $("#a1").click(function () {
+
+            $(".col-md-7 >div").hide();
+            $("#jbzl").show();
+
+
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a1").addClass("disabled");
+        })
+        $("#a2").click(function () {
+
+            $(".col-md-7 >div").hide();
+            $("#grzl").show();
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a2").addClass("disabled");
+        })
+        $("#a3").click(function () {
+            $(".col-md-7 >div").hide();
+            $("#wz").show();
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a3").addClass("disabled");
+        })
+        $("#a4").click(function () {
+            $(".col-md-7 >div").hide();
+            $("#xjk").show();
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a4").addClass("disabled");
+        })
+        $("#a5").click(function () {
+            $(".col-md-7 >div").hide();
+            $("#hmd").show();
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a5").addClass("disabled");
+        })
+        $("#a6").click(function () {
+            $(".col-md-7 >div").hide();
+            $("#zhsz").show();
+            $(".list-group .list-group-item").removeClass("disabled");
+            $("#a6").addClass("disabled");
+        })
+    })
+</script>
+</html>

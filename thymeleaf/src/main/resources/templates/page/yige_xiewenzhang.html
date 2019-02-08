@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple example - Editor.md examples</title>
+    <link rel="stylesheet" href="../model/editor/css/editormd.css">
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/editor/editormd.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        .div-img {
+            height: 250px;
+        }
+
+        .divMain {
+            margin-top: -15px;
+        }
+
+        .navbar {
+            border: 0px;
+            background-color: #FFFFFF;
+        }
+
+        <!--
+        取消列表的变线
+
+        -->
+        .list-group {
+            border: 0px;
+        }
+
+        .list-group-item {
+            border: 0px;
+
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        var testEditor;
+        testEditor = $(function () {
+            editormd("test-editormd", {
+                width: "100%",
+                height: 640,
+                //markdown : md,
+                codeFold: true,
+                syncScrolling: "single",
+                //你的lib目录的路径
+                path: "../model/editor/lib/",
+                imageUpload: true,//关闭图片上传功能
+                /*  theme: "dark",//工具栏主题
+                 previewTheme: "dark",//预览主题
+                 editorTheme: "pastel-on-dark",//编辑主题 */
+                emoji: false,
+                taskList: true,
+                tocm: true,         // Using [TOCM]
+                tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+                flowChart: true,             // 开启流程图支持，默认关闭
+                sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
+                //这个配置在simple.html中并没有，但是为了能够提交表单，使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+                saveHTMLToTextarea: true
+            });
+
+        });
+
+    </script>
+
+    <!-- iframe 高度自适应 -->
+    <script>
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+
+        window.onload = function () {
+            setIframeHeight(document.getElementById('external-frame'));
+        };
+    </script>
+
+</head>
+<body>
+
+
+<!-- 页面主体  -->
+<div class="container">
+    <!-- 标题栏 start -->
+    <iframe width="100%" src="yige_head.html" frameborder="0" scrolling="no"
+            onload="setIframeHeight(this)"></iframe>
+    <!-- 标题栏 end -->
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <p>标题：</p>
+                    <input class="form-control" placeholder="文章标题(最多15个字)"><br>
+                    <p>文章简介：</p>
+                    <textarea class="form-control" rows="3"></textarea><br><span class="btn btn-info">发布文章 </span> <br>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+
+            <p>文章具体内容：</p>
+            <!-- editormd start -->
+            <div class="editormd" id="test-editormd">
+                <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc" id="editormd"></textarea>
+                <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
+                <!-- html textarea 需要开启配置项 saveHTMLToTextarea == true -->
+                <textarea class="editormd-html-textarea" name="editorhtml" id="editorhtml"></textarea>
+            </div>
+            <!-- editormd end -->
+
+
+
+
+            <!-- 页尾 -->
+            <iframe  width="100%" src="yige_end.html" frameborder="0" scrolling="no"
+                     onload="setIframeHeight(this)"></iframe>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+</body>
+
+
+</html>

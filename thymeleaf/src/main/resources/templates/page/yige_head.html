@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        .div-img {
+            height: 250px;
+        }
+        .divMain {
+            margin-top: -15px;
+        }
+        .navbar {
+            border: 0px; background-color: #FFFFFF;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- 标题栏 start -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-success" href="#">
+                <img src="../img/logo.jpg" width="70px" style="margin-top: -20px">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html" style="color: #000000;font-size: 16px">主页<span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="yige_guanzhu.html" style="color: #000000;font-size: 16px">关注</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false" style="color: #000000;font-size: 16px">消息<span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">评价</a></li>
+                        <li><a href="#">我的关注</a></li>
+                        <li><a href="#">点赞和打赏</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="yige_userdetails.html">个人主页</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input  type="text" class="form-control" placeholder="搜索文章">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+
+            <!-- 未登录 -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button onclick="window.location.href='login.html'" style="width: 100%;margin-top: 13px" type="button" class="btn btn-info">登录</button>
+                </li>
+            </ul>
+
+            <!-- 登陆后 -->
+            <ul class="nav navbar-nav navbar-right" hidden>
+                <!-- 头像 -->
+                <li>
+                    <img src="../img/user.png"
+                         style="margin-top: 6px;width: 40px;border-radius: 50%">
+                </li>
+
+                <!-- 用户名加下拉 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"
+                       style="padding-top:17px;color: #000000;font-size: 16px;font-weight: bold">张三
+                        <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" id="dropdown-menu-hidden">
+                        <li><a href="#">主页</a></li>
+                        <li><a href="#">个人设置</a></li>
+                        <li><a href="#">我喜欢的</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">注销</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- 标题栏 end -->
+
+
+</body>

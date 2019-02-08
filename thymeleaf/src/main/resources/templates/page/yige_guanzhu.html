@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        .div-img {
+            height: 250px;
+        }
+
+        .divMain {
+            margin-top: -15px;
+        }
+
+        .navbar {
+            border: 0px;
+            background-color: #FFFFFF;
+        }
+
+        <!--
+        取消列表的变线
+
+        -->
+        .list-group {
+            border: 0px;
+        }
+
+        .list-group-item {
+            border: 0px;
+
+        }
+
+
+    </style>
+    <script>
+        $(document).ready(function () {
+
+
+            $("#a1").click(function () {
+                $("#if1").hide();
+                $("#if2").show()
+            })
+            //
+            // $("#a2").click(function () {
+            //     $(".list-group .list-group-item").removeClass("disabled");
+            //     $("#if2").hide()
+            //     $("#if1").show();
+            //     $('#if1').attr('src', 'yige_yigequan.html');
+            // })
+
+
+            $(".list-group").children().click(function () {
+                var object = $(this);
+                var o = object[0].id;
+                $(".list-group .list-group-item").removeClass("disabled");
+                var id1 = "#" + o;
+                $(id1).addClass("disabled");
+
+
+                $("#if2").hide();
+                $("#if1").show()
+                $('#if1').attr('src', 'userYigequan.html');
+            })
+
+
+        })
+    </script>
+
+    <!-- iframe 高度自适应 -->
+    <script>
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+
+        window.onload = function () {
+            setIframeHeight(document.getElementById('external-frame'));
+        };
+    </script>
+</head>
+<body>
+
+<!-- 页面主体  -->
+<div class="container">
+    <!-- 标题栏 start -->
+    <iframe width="100%" src="yige_head.html" frameborder="0" scrolling="no"
+            onload="setIframeHeight(this)"></iframe>
+    <!-- 标题栏 end -->
+
+    <hr>
+
+    <!-- 页面内容 start -->
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3 hidden-xs hidden-sm" style="height: 500px;">
+
+            <!-- 关注 -->
+            <div class="row" style="padding-top: 20px;padding-left: 0px;padding-right: 0px">
+                <div class="col-md-12">
+                    <div style="float:left;">
+                        <A href="" style="text-decoration: none;color: #000000"><span
+                                style="font-size: 14px">全部关注</span></A>
+                    </div>
+                    <div style="float: right;color: #000000">
+                        <span style="font-size: 12px" class="glyphicon glyphicon-plus"></span>
+                        <a href="#" style="text-decoration: none;color: #000000"><span
+                                style="font-size: 14px">添加关注</span></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- 关注列表 -->
+            <div class="list-group">
+                <a href="#" class="list-group-item disabled" id="a1">
+                    <img width="40px" src="../img/yigequan.png">&nbsp;&nbsp;&nbsp;<span>一个圈</span>
+                </a>
+                <a href="#" class="list-group-item" id="a2">
+                    <img width="40px" src="../img/user.png">&nbsp;&nbsp;&nbsp;<span>张三</span>
+                </a>
+                <a href="#" class="list-group-item" id="a3">
+                    <img width="40px" src="../img/user.png">&nbsp;&nbsp;&nbsp;<span>李四</span>
+                </a>
+                <a href="#" class="list-group-item" id="a4">
+                    <img width="40px" src="../img/user.png">&nbsp;&nbsp;&nbsp;<span>王五</span>
+                </a>
+                <a href="#" class="list-group-item" id="a5">
+                    <img width="40px" src="../img/user.png">&nbsp;&nbsp;&nbsp;<span>赵六</span>
+                </a>
+            </div>
+
+        </div>
+        <!-- 文章 -->
+        <div class="col-md-7">
+            <!-- 关注人的动态 -->
+            <iframe id="if1" width="100%" hidden frameborder="0" scrolling="no" onload="setIframeHeight(this)"></iframe>
+
+            <!-- 文章 每页显示6个-->
+            <iframe id="if2" width="100%" src="yige_guanzhuyigequan.html" frameborder="0" scrolling="no"
+                    onload="setIframeHeight(this)"></iframe>
+
+
+            <!-- 页尾 -->
+            <iframe  width="100%" src="yige_end.html" frameborder="0" scrolling="no"
+                    onload="setIframeHeight(this)"></iframe>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- 页面内容 end -->
+
+
+</div>
+</body>
+</html>

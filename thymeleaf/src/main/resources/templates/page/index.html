@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="../model/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../model/jquery-3.3.1.min.js"></script>
+    <script src="../model/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        .div-img {
+            height: 250px;
+        }
+        .divMain {
+            margin-top: -15px;
+        }
+        .navbar {
+            border: 0px; background-color: #FFFFFF;
+        }
+    </style>
+    <!-- iframe 高度自适应 -->
+    <script>
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+
+        window.onload = function () {
+            setIframeHeight(document.getElementById('external-frame'));
+        };
+    </script>
+</head>
+<body>
+<!-- 页面主体  -->
+<div class="container">
+
+    <!-- 标题栏 start -->
+    <iframe width="100%" src="yige_head.html" frameborder="0" scrolling="no"
+            onload="setIframeHeight(this)"></iframe>
+    <!-- 标题栏 end -->
+
+    <!-- 页面内容 start -->
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+
+            <!-- 轮播图 start -->
+            <div id="myCarousel" style="margin-bottom: 15px" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner" style="border-radius: 10px">
+                    <div class="item active div-img">
+                        <a href="#"> <img src="../img/o.jpg" width="100%" height="100%" class="carousel-img"
+                                          alt="First slide"></a>
+                        <div class="carousel-caption">标题 1</div>
+                    </div>
+                    <div class="item div-img">
+                        <a href="#"><img src="../img/o.jpg" width="100%" height="100%" class="carousel-img"
+                                         alt="Second slide"></a>
+                        <div class="carousel-caption">标题 2</div>
+                    </div>
+                    <div class="item div-img">
+                        <a href="#"><img src="../img/o.jpg" width="100%" height="100%" class="carousel-img"
+                                         alt="Third slide"></a>
+                        <div class="carousel-caption">标题 3</div>
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- 轮播图 end -->
+
+            <!-- 文章主体 statr -->
+            <div class="row">
+
+
+                <!-- 文章 每页显示6个-->
+                <div class="col-md-12">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 divMain">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <!-- 文章标题 -->
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <!-- 文章简介  不能超过52个汉字 -->
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12 divMain">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <!-- 文章标题 -->
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <!-- 文章简介  不能超过52个汉字 -->
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12 divMain">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <!-- 文章标题 -->
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <!-- 文章简介  不能超过52个汉字 -->
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12 divMain">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <!-- 文章标题 -->
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <!-- 文章简介  不能超过52个汉字 -->
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12 divMain">
+                    <div class="center-block">
+                        <!-- 文章配图 -->
+                        <a href="#">
+                            <img src="../img/o.jpg" style="float: right" height="100px" width="150px"></img>
+                        </a>
+                        <!-- 文章标题 -->
+                        <a href="#" style="color: black"><h3>这是一个测试!</h3></a>
+                        <!-- 文章简介  不能超过52个汉字 -->
+                        <p style="color: #999">
+                            这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这是一个测试这
+                        <div>
+                            <!-- 发帖人 -->
+                            <a href="#" style="color: #999;margin-left: 4px;margin-right: 4px">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-user"></span>
+                                <span style="font-size: 13px">李四</span>
+                            </a>
+                            <!-- 评论数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-comment"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 点赞数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-heart"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                            <!-- 打赏数 -->
+                            <span style="color: #999">
+                                <span style="font-size: 12px" class="glyphicon glyphicon-yen"></span>
+                                <span style="font-size: 14px">20</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+
+
+                <a href="" style="color: #999999"><p style="text-align: center">加载更多</p></a>
+
+
+                <!-- 页尾 -->
+                <iframe width="100%" src="yige_end.html" frameborder="0" scrolling="no"
+                        onload="setIframeHeight(this)"></iframe>
+
+
+            </div>
+            <!-- 文章主体 end -->
+
+
+        </div>
+
+        <!-- 侧边栏 -->
+        <!--hidden-xs hidden-sm 小屏幕和超小屏幕隐藏-->
+        <div class="col-md-3 hidden-xs hidden-sm" style="height: 500px;">
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <a href="#" class="col-md-12" style="margin-top: -3px;margin-bottom: 6px">
+                    <img src="../img/qiri.png" width="100%">
+                </a>
+                <a href="#" class="col-md-12" style="margin-bottom: 6px"><img src="../img/30tian.png" width="100%"></a>
+                <a href="#" class="col-md-12" style="margin-bottom: 6px"><img src="../img/yxuan.png" width="100%"></a>
+            </div>
+            <div class="row">
+                <!-- 登录注册！ -->
+                <a href="#" class="col-md-6">
+                    <button style="width: 100%;margin-top: 6px" type="button" class="btn btn-info">登录</button>
+                </a>
+                <a href="#" class="col-md-6">
+                    <button style="width: 100%;margin-top: 6px" type="button" class="btn btn-info">注册</button>
+                </a>
+            </div>
+
+            <!-- 侧边广告 -->
+            <div style="margin-top:12px" class="row">
+                <img src="../img/o.jpg" class="col-md-12" width="100%" alt="广告"/>
+            </div>
+
+
+            <!-- 侧边推荐 -->
+            <div class="row" style="margin-top:12px;padding-left: 0px;padding-right: 0px">
+                <div class="col-md-12">
+                    <div style="float:left;">
+                        <A href="" style="text-decoration: none;color: #999999"><span
+                                style="font-size: 14px">推荐文章</span></A>
+                    </div>
+                    <div style="float: right;color: #999999">
+                        <span style="font-size: 12px" class="glyphicon glyphicon-refresh"></span>
+                        <a href="#" style="text-decoration: none;color: #999999"><span
+                                style="font-size: 14px">换一批</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 6px">
+                <!-- 推荐的文章最多3个 -->
+                <div class="col-md-12">
+                    <a href="#" style="color: #000000;text-decoration: none"><h4>文章1</h4></a>
+                    <a href="#" style="text-decoration: none">
+                        <p style="color: #999999">aawadahuwinsidnfisjefiusjeifunin</p>
+                    </a>
+                    <hr>
+                </div>
+                <!-- 推荐的文章最多3个 -->
+                <div class="col-md-12">
+                    <a href="#" style="color: #000000;text-decoration: none"><h4>文章1</h4></a>
+                    <a href="#" style="text-decoration: none">
+                        <p style="color: #999999">adwadahuwinsidnfisjefiusjeifunin</p>
+                    </a>
+                    <hr>
+                </div>
+                <!-- 推荐的文章最多3个 -->
+                <div class="col-md-12">
+                    <a href="#" style="color: #000000;text-decoration: none"><h4>文章1</h4></a>
+                    <a href="#" style="text-decoration: none">
+                        <p style="color: #999999">adwadahuwinsidnfisjefiusjeifunin</p>
+                    </a>
+                    <hr>
+                </div>
+            </div>
+
+
+            <!-- 侧边广告 -->
+            <div style="" class="row">
+                <img src="../img/o.jpg" class="col-md-12" width="100%" alt="广告"/>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- 页面内容 end -->
+
+
+</div>
+
+
+</body>
+</html>
