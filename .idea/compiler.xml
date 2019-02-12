@@ -10,6 +10,7 @@
         <module name="dubbo-service1" />
         <module name="dubbo-service2" />
         <module name="dubbo-web" />
+        <module name="email" />
         <module name="mybatis" />
         <module name="security" />
         <module name="thymeleaf" />
@@ -20,6 +21,7 @@
       <module name="dubbo-service1" target="1.8" />
       <module name="dubbo-service2" target="1.8" />
       <module name="dubbo-web" target="1.8" />
+      <module name="email" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="security" target="1.8" />
       <module name="security5" target="1.8" />
