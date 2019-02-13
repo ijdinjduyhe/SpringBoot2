@@ -14,3 +14,7 @@
 ### SpringSecurity5
 - 简介：Spring家族的一款安全框架。
 - 使用教程：[git主所写](https://www.jianshu.com/p/ebf5aed50984)。[参考资料](https://blog.csdn.net/yin380697242/article/details/51893397)
+
+### SpringBoot2-Email
+- 简介：整合Springboot 支持的邮箱发送工具
+- 使用教程：[git主所写](https://www.jianshu.com/p/16cfcfbedecc)。
