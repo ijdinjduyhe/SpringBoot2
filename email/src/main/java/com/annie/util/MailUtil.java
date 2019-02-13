@@ -13,7 +13,7 @@ public class MailUtil {
     @Autowired
     private JavaMailSender jms;
 
-    // 收信人     // 设置主题    // 设置内容
+                            // 收信人     // 设置主题    // 设置内容
     public void sendMail(String toUser, String subject, String text) {
 
         subject = "感谢的您注册~ ";
