@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.annie.mapper.ArticlesMapper" >
+  <resultMap id="BaseResultMap" type="com.annie.entity.Articles" >
+    <id column="a_id" property="aId" jdbcType="INTEGER" />
+    <result column="a_u_id" property="aUId" jdbcType="INTEGER" />
+    <result column="a_newarticle" property="aNewarticle" jdbcType="INTEGER" />
+    <result column="a_onearticle" property="aOnearticle" jdbcType="INTEGER" />
+    <result column="a_allfabulous" property="aAllfabulous" jdbcType="INTEGER" />
+    <result column="a_allcomment" property="aAllcomment" jdbcType="INTEGER" />
+    <result column="a_allreward" property="aAllreward" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    a_id, a_u_id, a_newarticle, a_onearticle, a_allfabulous, a_allcomment, a_allreward
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.annie.entity.ArticlesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from articles
+    where a_id = #{aId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from articles
+    where a_id = #{aId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.annie.entity.ArticlesExample" >
+    delete from articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.annie.entity.Articles" >
+    insert into articles (a_id, a_u_id, a_newarticle, 
+      a_onearticle, a_allfabulous, a_allcomment, 
+      a_allreward)
+    values (#{aId,jdbcType=INTEGER}, #{aUId,jdbcType=INTEGER}, #{aNewarticle,jdbcType=INTEGER}, 
+      #{aOnearticle,jdbcType=INTEGER}, #{aAllfabulous,jdbcType=INTEGER}, #{aAllcomment,jdbcType=INTEGER}, 
+      #{aAllreward,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.annie.entity.Articles" >
+    insert into articles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aId != null" >
+        a_id,
+      </if>
+      <if test="aUId != null" >
+        a_u_id,
+      </if>
+      <if test="aNewarticle != null" >
+        a_newarticle,
+      </if>
+      <if test="aOnearticle != null" >
+        a_onearticle,
+      </if>
+      <if test="aAllfabulous != null" >
+        a_allfabulous,
+      </if>
+      <if test="aAllcomment != null" >
+        a_allcomment,
+      </if>
+      <if test="aAllreward != null" >
+        a_allreward,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aId != null" >
+        #{aId,jdbcType=INTEGER},
+      </if>
+      <if test="aUId != null" >
+        #{aUId,jdbcType=INTEGER},
+      </if>
+      <if test="aNewarticle != null" >
+        #{aNewarticle,jdbcType=INTEGER},
+      </if>
+      <if test="aOnearticle != null" >
+        #{aOnearticle,jdbcType=INTEGER},
+      </if>
+      <if test="aAllfabulous != null" >
+        #{aAllfabulous,jdbcType=INTEGER},
+      </if>
+      <if test="aAllcomment != null" >
+        #{aAllcomment,jdbcType=INTEGER},
+      </if>
+      <if test="aAllreward != null" >
+        #{aAllreward,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.annie.entity.ArticlesExample" resultType="java.lang.Integer" >
+    select count(*) from articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update articles
+    <set >
+      <if test="record.aId != null" >
+        a_id = #{record.aId,jdbcType=INTEGER},
+      </if>
+      <if test="record.aUId != null" >
+        a_u_id = #{record.aUId,jdbcType=INTEGER},
+      </if>
+      <if test="record.aNewarticle != null" >
+        a_newarticle = #{record.aNewarticle,jdbcType=INTEGER},
+      </if>
+      <if test="record.aOnearticle != null" >
+        a_onearticle = #{record.aOnearticle,jdbcType=INTEGER},
+      </if>
+      <if test="record.aAllfabulous != null" >
+        a_allfabulous = #{record.aAllfabulous,jdbcType=INTEGER},
+      </if>
+      <if test="record.aAllcomment != null" >
+        a_allcomment = #{record.aAllcomment,jdbcType=INTEGER},
+      </if>
+      <if test="record.aAllreward != null" >
+        a_allreward = #{record.aAllreward,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update articles
+    set a_id = #{record.aId,jdbcType=INTEGER},
+      a_u_id = #{record.aUId,jdbcType=INTEGER},
+      a_newarticle = #{record.aNewarticle,jdbcType=INTEGER},
+      a_onearticle = #{record.aOnearticle,jdbcType=INTEGER},
+      a_allfabulous = #{record.aAllfabulous,jdbcType=INTEGER},
+      a_allcomment = #{record.aAllcomment,jdbcType=INTEGER},
+      a_allreward = #{record.aAllreward,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.annie.entity.Articles" >
+    update articles
+    <set >
+      <if test="aUId != null" >
+        a_u_id = #{aUId,jdbcType=INTEGER},
+      </if>
+      <if test="aNewarticle != null" >
+        a_newarticle = #{aNewarticle,jdbcType=INTEGER},
+      </if>
+      <if test="aOnearticle != null" >
+        a_onearticle = #{aOnearticle,jdbcType=INTEGER},
+      </if>
+      <if test="aAllfabulous != null" >
+        a_allfabulous = #{aAllfabulous,jdbcType=INTEGER},
+      </if>
+      <if test="aAllcomment != null" >
+        a_allcomment = #{aAllcomment,jdbcType=INTEGER},
+      </if>
+      <if test="aAllreward != null" >
+        a_allreward = #{aAllreward,jdbcType=INTEGER},
+      </if>
+    </set>
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.annie.entity.Articles" >
+    update articles
+    set a_u_id = #{aUId,jdbcType=INTEGER},
+      a_newarticle = #{aNewarticle,jdbcType=INTEGER},
+      a_onearticle = #{aOnearticle,jdbcType=INTEGER},
+      a_allfabulous = #{aAllfabulous,jdbcType=INTEGER},
+      a_allcomment = #{aAllcomment,jdbcType=INTEGER},
+      a_allreward = #{aAllreward,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+</mapper>
