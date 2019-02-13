@@ -18,3 +18,7 @@
 ### SpringBoot2-Email
 - 简介：整合Springboot 支持的邮箱发送工具
 - 使用教程：[git主所写](https://www.jianshu.com/p/16cfcfbedecc)。
+
+### SpringBoot2-Editor.md
+- 简介：整合Springboot 一款简单富文本插件
+- 使用教程：[git主所写](https://www.jianshu.com/p/a40bf110cffb)。[参考资料](https://www.cnblogs.com/liujiaxian/p/6336841.html)
