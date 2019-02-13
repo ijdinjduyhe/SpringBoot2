@@ -18,6 +18,15 @@ public class EditorController {
         return "editor";
     }
 
+
+
+    @RequestMapping("/save")
+    @ResponseBody
+    public String save(String data) {
+        System.out.println(data);
+        return "success";
+    }
+
     @RequestMapping("/show")
     public String show(Model model) {
         String str = "工具：\n" +
@@ -367,14 +376,6 @@ public class EditorController {
         model.addAttribute("str", str);
 
         return "show";
-    }
-
-
-    @RequestMapping("/save")
-    @ResponseBody
-    public String save(String data) {
-        System.out.println(data);
-        return "success";
     }
 
 
