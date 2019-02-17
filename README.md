@@ -21,3 +21,8 @@
 ### SpringBoot2-Editor.md
 - 简介：整合Springboot 一款简单富文本插件
 - 使用教程：[git主所写](https://www.jianshu.com/p/a40bf110cffb)。[官网教程](https://pandao.github.io/editor.md/examples/index.html)。[参考资料](https://www.cnblogs.com/liujiaxian/p/6336841.html)
+
+
+### SpringBoot2-fastDFS
+- 简介：整合fastDFS文件服务器
+- 使用教程：[git主所写](https://www.jianshu.com/p/ae55f59086c5)。
