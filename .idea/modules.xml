@@ -8,22 +8,14 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-service/cloud-service.iml" filepath="$PROJECT_DIR$/cloud-service/cloud-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-interfaces/dubbo-interfaces.iml" filepath="$PROJECT_DIR$/dubbo-interfaces/dubbo-interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" filepath="$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" filepath="$PROJECT_DIR$/dubbo-service1/dubbo-service1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" filepath="$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" filepath="$PROJECT_DIR$/dubbo-service2/dubbo-service2.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-web/dubbo-web.iml" filepath="$PROJECT_DIR$/dubbo-web/dubbo-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dubbo-web/dubbo-web.iml" filepath="$PROJECT_DIR$/dubbo-web/dubbo-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/editor/editor.iml" filepath="$PROJECT_DIR$/editor/editor.iml" />
       <module fileurl="file://$PROJECT_DIR$/editor/editor.iml" filepath="$PROJECT_DIR$/editor/editor.iml" />
       <module fileurl="file://$PROJECT_DIR$/email/email.iml" filepath="$PROJECT_DIR$/email/email.iml" />
-      <module fileurl="file://$PROJECT_DIR$/email/email.iml" filepath="$PROJECT_DIR$/email/email.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fastdfs/fastdfs.iml" filepath="$PROJECT_DIR$/fastdfs/fastdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/fastdfs/fastdfs.iml" filepath="$PROJECT_DIR$/fastdfs/fastdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/mybatis/mybatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatisplus/mybatisplus.iml" filepath="$PROJECT_DIR$/mybatisplus/mybatisplus.iml" />
       <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
-      <module fileurl="file://$PROJECT_DIR$/thymeleaf/thymeleaf.iml" filepath="$PROJECT_DIR$/thymeleaf/thymeleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/thymeleaf/thymeleaf.iml" filepath="$PROJECT_DIR$/thymeleaf/thymeleaf.iml" />
     </modules>
   </component>

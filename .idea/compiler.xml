@@ -18,11 +18,12 @@
         <module name="email" />
         <module name="fastdfs" />
         <module name="mybatis" />
+        <module name="mybatisplus" />
         <module name="security" />
         <module name="thymeleaf" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="cloud-client" target="1.8" />
       <module name="cloud-feign" target="1.8" />
       <module name="cloud-rest-ibbon" target="1.8" />
@@ -35,10 +36,8 @@
       <module name="email" target="1.8" />
       <module name="fastdfs" target="1.8" />
       <module name="mybatis" target="1.8" />
+      <module name="mybatisplus" target="1.8" />
       <module name="security" target="1.8" />
-      <module name="security5" target="1.8" />
-      <module name="shiro" target="1.8" />
-      <module name="springboot-mybatis" target="1.8" />
       <module name="thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
