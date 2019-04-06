@@ -21,6 +21,12 @@
     <dependencies>
 
 
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.9</version>
+        </dependency>
 
         <!--阿里druid数据库链接依赖-->
         <dependency>
