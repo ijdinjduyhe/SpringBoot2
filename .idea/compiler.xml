@@ -17,6 +17,7 @@
         <module name="editor" />
         <module name="email" />
         <module name="fastdfs" />
+        <module name="kindeditor" />
         <module name="mybatis" />
         <module name="mybatisplus" />
         <module name="security" />
@@ -35,6 +36,7 @@
       <module name="editor" target="1.8" />
       <module name="email" target="1.8" />
       <module name="fastdfs" target="1.8" />
+      <module name="kindeditor" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="mybatisplus" target="1.8" />
       <module name="security" target="1.8" />

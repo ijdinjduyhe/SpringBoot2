@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Hello,kindeditor</h2>
+<hr>
+
+
+
+<textarea id="editor_id" name="content" style="width:700px;height:300px;">
+&lt;strong&gt;HTML内容&lt;/strong&gt;
+</textarea>
+<br>
+<br>
+<br>
+<button id="submit">提交</button>
+
+
+</body>
+<script charset="utf-8" src="/kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="/kindeditor/lang/zh-CN.js"></script>
+<script charset="utf-8" src="/jquery.min.js"></script>
+<script>
+
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id',{
+            // 上传图片的名字
+            filePostName  : "uploadFile",
+            // 配置上传路径
+            uploadJson : '/uploadImg',
+            allowFileManager : true,
+            allowPreviewEmoticons: true,
+            allowImageUpload: true,
+            dir : "image"
+        });
+    });
+
+
+</script>
+
+
+<script>
+    $("#submit").click(function () {
+        alert("完成了点击.")
+    })
+</script>
+</html>

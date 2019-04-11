@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/editor/editor.iml" filepath="$PROJECT_DIR$/editor/editor.iml" />
       <module fileurl="file://$PROJECT_DIR$/email/email.iml" filepath="$PROJECT_DIR$/email/email.iml" />
       <module fileurl="file://$PROJECT_DIR$/fastdfs/fastdfs.iml" filepath="$PROJECT_DIR$/fastdfs/fastdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kindeditor/kindeditor.iml" filepath="$PROJECT_DIR$/kindeditor/kindeditor.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/mybatis/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatisplus/mybatisplus.iml" filepath="$PROJECT_DIR$/mybatisplus/mybatisplus.iml" />
       <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
